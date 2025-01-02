@@ -7,13 +7,13 @@ python preprocess.py
 echo "Preprocess complete."
 
 REM Step 2: Train the Decision Tree classifier
-REM python classifier_dt.py
+python classifier_dt.py
 
 REM Step 3: Train the Naive Bayes classifier
-REM python classifier_nb.py
+python classifier_nb.py
 
 REM Step 4: Train the Support Vector Machine classifier
-REM python classifier_svm.py
+python classifier_svm.py
 
 echo "Training complete."
 pause
