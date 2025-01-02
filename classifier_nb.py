@@ -4,9 +4,15 @@ def best_model(X_train, Y_train, X_val, Y_val, X_test, Y_test, name):
     # scikit model name
     name = name + '_nb.pkl'
 
-    # open file for writing results
-    f = open('results_nb.txt', 'a')
-    print(f'Results for {name}...', file=f)
+    # Ensure the 'results/' directory exists
+    results_dir = 'results/'
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir)
+
+    # Open the file for appending results
+    results_file = os.path.join(results_dir, 'results_nb.txt')
+    with open(results_file, 'a') as f:
+        print(f'Results for {name}...', file=f)
 
     # find optimal var_smoothing parameter using grid search
     param_grid = {

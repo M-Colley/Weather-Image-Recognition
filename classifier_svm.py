@@ -3,10 +3,16 @@ from utils import *
 def best_model(X_train, Y_train, X_val, Y_val, X_test, Y_test, name):
     # scikit model name
     name = name + '_svm.pkl'
+    
+    # Ensure the 'results/' directory exists
+    results_dir = 'results/'
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir)
 
-    # open file for writing results
-    f = open('results_svm.txt', 'a')
-    print(f'Results for {name}...', file=f)
+    # Open the file for appending results
+    results_file = os.path.join(results_dir, 'results_svm.txt')
+    with open(results_file, 'a') as f:
+        print(f'Results for {name}...', file=f)
 
     # grid search for best parameters using validation set
     param_grid = {
