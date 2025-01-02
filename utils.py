@@ -1,8 +1,8 @@
 import os
 import numpy as np
 import pickle as pk
+import imageio.v3 as iio
 from skimage.transform import resize
-from skimage.io import imread, imshow, show
 from skimage.feature import hog
 from skimage.color import rgb2gray
 from sklearn.decomposition import PCA
@@ -23,7 +23,7 @@ def get_images(dataset_path):
         classes.append(subdir)
         cnt = 0
         for file in os.listdir(dataset_path + subdir):
-            img = imread(dataset_path + subdir + '/' + file)
+            img = iio.imread(dataset_path + subdir + '/' + file)
             X.append(img)
             Y.append(classes.index(subdir))
             cnt += 1

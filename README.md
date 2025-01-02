@@ -1,4 +1,9 @@
-# Weather Image Classification using ML
+# Weather Image Classification using ML --- Updated to scikit-learn 1.6.0 and improved preprocess
+
+
+## Raison d'etre
+The original version uses deprecated functionality of `scikit-learn` and `skimage`. 
+Furthermore, the `preprocess.py` process leads to corrupted images - this was resolved.
 
 ## Dataset
 
@@ -64,10 +69,10 @@ First download the dataset from [here](https://www.kaggle.com/datasets/jehanbhat
 With the above file structure, run the following commands:
 
 ```
-python3 preprocess.py [if the dataset is not resized, this creates resized/ directory]
-python3 classifier_dt.py [train Decision Tree classifier]
-python3 classifier_nb.py [train Naive Bayes classifier]
-python3 classifier_svm.py [train Support Vector Machine classifier]
+python preprocess.py [if the dataset is not resized, this creates resized/ directory]
+python classifier_dt.py [train Decision Tree classifier]
+python classifier_nb.py [train Naive Bayes classifier]
+python classifier_svm.py [train Support Vector Machine classifier]
 ```
 
 ** if the trained models are not provided, the above commands will train the models and save them in the current directory, else the trained models will be loaded from the current directory

@@ -1,0 +1,7 @@
+scikit-learn>=1.6.0
+scikit-image>=0.25.0
+opencv-python
+numpy>=2.2.1
+imageio[pyav]
+matplotlib>=3.10.0
+tqdm>=4.67.1
